@@ -1,0 +1,23 @@
+import mysql.connector
+import pandas as pd
+
+db = mysql.connector.connect(
+  host="0.tcp.ap.ngrok.io",
+  user="root",
+  passwd="",
+  port=19760,
+)
+
+#if db.is_connected():
+#  print("Berhasil terhubung ke database")
+
+sql = "show databases"
+df = pd.read_sql_query(sql,db)
+print(df)
+
+# cursor = db.cursor()
+# sql = 'show databases'
+
+# cursor.execute(sql)
+
+# print("Tabel customers berhasil dibuat!")
